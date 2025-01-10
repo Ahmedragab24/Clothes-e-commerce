@@ -45,13 +45,13 @@ const AdBanner = () => {
           className="object-cover w-full h-auto"
           priority
         />
-        <div className="absolute inset-0 bg-black/50 bg-opacity-40" />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+        <div className="absolute inset-0 bg-black/30 bg-opacity-40" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
           <motion.h2
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="mb-4 text-4xl font-bold md:text-5xl drop-shadow-lg"
           >
             {ads[currentAd].title}
           </motion.h2>
@@ -59,7 +59,7 @@ const AdBanner = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl mb-8"
+            className="mb-8 text-xl md:text-2xl drop-shadow-lg"
           >
             {ads[currentAd].description}
           </motion.p>
@@ -71,7 +71,7 @@ const AdBanner = () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-black hover:bg-gray-200 transition-colors"
+              className="text-black transition-colors bg-white hover:bg-gray-200 drop-shadow-lg"
             >
               <a href={ads[currentAd].link}>Shop Now</a>
             </Button>
@@ -80,19 +80,19 @@ const AdBanner = () => {
 
         <button
           onClick={prevAd}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+          className="absolute p-2 transition-all duration-200 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full left-4 top-1/2 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
           aria-label="Previous ad"
         >
           <ChevronLeft className="w-6 h-6 text-black" />
         </button>
         <button
           onClick={nextAd}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+          className="absolute p-2 transition-all duration-200 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full right-4 top-1/2 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
           aria-label="Next ad"
         >
           <ChevronRight className="w-6 h-6 text-black" />
         </button>
-        <div className="absolute - bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute flex space-x-2 transform -translate-x-1/2 - bottom-20 left-1/2">
           {ads.map((_, index) => (
             <button
               key={index}

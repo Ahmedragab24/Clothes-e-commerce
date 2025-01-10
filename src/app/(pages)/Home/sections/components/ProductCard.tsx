@@ -3,7 +3,10 @@
 import React from "react";
 import type { Product as ProductType } from "@/type";
 import Image from "next/image";
-import { calculateDiscountedPrice, formatPrice } from "@/hooks/DiscountPrice";
+import {
+  calculateDiscountedPrice,
+  formatPrice,
+} from "@/hooks/UseDiscountPrice";
 import { Metadata } from "next";
 import AddToCardBtn from "@/components/auth/AddToCardBtn";
 import Link from "next/link";
@@ -42,7 +45,7 @@ const ProductCard = ({ product }: IProps) => {
 
         {/* Circular Add to Cart Button */}
         <div className="">
-          <AddToCardBtn product={product} />
+          <AddToCardBtn typeBtn="Icon" product={product} />
         </div>
       </div>
 
@@ -57,7 +60,7 @@ const ProductCard = ({ product }: IProps) => {
               {product.category.mainCategory}
             </h4>
             <h4 className="inline-block px-2 py-1 font-medium rounded-full bg-black/15 drop-shadow-md">
-              {product.category.subCategory}
+              {product.category.subCategory[1]}
             </h4>
           </div>
         </div>

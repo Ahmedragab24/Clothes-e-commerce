@@ -1,23 +1,26 @@
 export type Product = {
   id: number;
   name: string;
+  description?: string;
   href: string;
   imageSrc: string;
   imageAlt: string;
   price: number;
   PricePerQuantity: number;
-  color?: string;
+  color?: colorsType[];
   size: sizesType[];
   category: {
     mainCategory: mainCategoriesType;
-    subCategory: subcategoriesType;
+    subCategory: subcategoriesType[];
   };
   discount?: number;
   quantity?: number;
   userQuantity?: number;
+  special?: boolean;
+  newProduct?: boolean;
 };
 
-export type mainCategoriesType = "Man" | "Woman" | "child";
+export type mainCategoriesType = "All" | "Man" | "Woman" | "Child";
 
 export type subcategoriesType =
   | "All"
@@ -34,7 +37,13 @@ export type colorsType =
   | "Grey"
   | "White"
   | "Beige"
-  | "Brown";
+  | "Brown"
+  | "Red"
+  | "Blue"
+  | "Orange"
+  | "Yellow"
+  | "Green"
+  | "Sky";
 
 export type sizesType = "XS" | "S" | "M" | "L" | "XL" | "XXL";
 

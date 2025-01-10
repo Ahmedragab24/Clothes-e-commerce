@@ -20,12 +20,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
 
   return (
     <div className="flex-1">
-      <div className="flex justify-between items-center mb-6">
-        <p className="text-lg text-gray-600">{products.length} products</p>
+      <div className="flex items-center justify-between mb-6">
+        <p className="text-lg text-muted-foreground">
+          {products.length} products
+        </p>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="bg-white border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
         >
           <option value="featured">Featured</option>
           <option value="priceLowToHigh">Price: Low to High</option>
@@ -33,7 +35,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
         </select>
       </div>
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

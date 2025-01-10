@@ -8,7 +8,7 @@ import {
 
 export const NavLinks = [
   {
-    title: "Homepage",
+    title: "Home",
     url: "/",
   },
   {
@@ -42,12 +42,13 @@ export const slides = [
   },
   {
     id: "slide2",
-    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736106548/Gray_Minimalist_New_Collection_Banner_d0mauu.jpg",
+    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736468978/Gray_Minimalist_New_Collection_Banner_3_bgkrbq.jpg",
     alt: "Slide 2",
-    title: "Special offer",
-    suTitle: "sale",
+    suTitle: "Special offer",
+    description:
+      "There is a collection of children's clothing with high quality, modern designs and reasonable prices.",
     offer: "up to 50% off",
-    btn: "Buy Now",
+    btn: "Shop Now",
     link: "/#",
     socialLink: [
       RiFacebookBoxFill,
@@ -58,12 +59,13 @@ export const slides = [
   },
   {
     id: "slide3",
-    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736106548/Gray_Minimalist_New_Collection_Banner_d0mauu.jpg",
+    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736472950/Gray_Minimalist_New_Collection_Banner_4_nt8c43.jpg",
     alt: "Slide 3",
-    title: "Special offer",
-    suTitle: "sale",
-    offer: "up to 50% off",
-    btn: "Buy Now",
+    suTitle: "Special offer",
+    description:
+      "The best offers and discounts on shoes (men's - women's - children's), Here you will find everything you are looking for and what suits you with the best quality and best prices",
+    offer: "up to 40% off",
+    btn: "Shop Now",
     link: "/#",
     socialLink: [
       RiFacebookBoxFill,
@@ -95,48 +97,48 @@ export const categories = [
   },
 ];
 
-export const offers = [
-  {
-    id: 1,
-    title: "Premium Headphones",
-    description: "Immersive sound experience with noise cancellation",
-    image:
-      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
-    price: 199.99,
-  },
-  {
-    id: 2,
-    title: "Smart Watch",
-    description: "Track your fitness and stay connected on the go",
-    image:
-      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143475/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_4_wnqglb.png",
-    price: 149.99,
-  },
-  {
-    id: 3,
-    title: "4K Ultra HD TV",
-    description: "Stunning picture quality for your home entertainment",
-    image:
-      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143477/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_2_mpvnfx.png",
-    price: 799.99,
-  },
-  {
-    id: 4,
-    title: "Wireless Earbuds",
-    description: "Crystal clear audio in a compact, wireless design",
-    image:
-      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_1_ddqt4v.png",
-    price: 129.99,
-  },
-  {
-    id: 5,
-    title: "Gaming Console",
-    description: "Next-gen gaming with stunning graphics and fast load times",
-    image:
-      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_3_cydztb.png",
-    price: 499.99,
-  },
-];
+// export const offers = [
+//   {
+//     id: 1,
+//     title: "Premium Headphones",
+//     description: "Immersive sound experience with noise cancellation",
+//     image:
+//       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+//     price: 199.99,
+//   },
+//   {
+//     id: 2,
+//     title: "Smart Watch",
+//     description: "Track your fitness and stay connected on the go",
+//     image:
+//       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143475/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_4_wnqglb.png",
+//     price: 149.99,
+//   },
+//   {
+//     id: 3,
+//     title: "4K Ultra HD TV",
+//     description: "Stunning picture quality for your home entertainment",
+//     image:
+//       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143477/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_2_mpvnfx.png",
+//     price: 799.99,
+//   },
+//   {
+//     id: 4,
+//     title: "Wireless Earbuds",
+//     description: "Crystal clear audio in a compact, wireless design",
+//     image:
+//       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_1_ddqt4v.png",
+//     price: 129.99,
+//   },
+//   {
+//     id: 5,
+//     title: "Gaming Console",
+//     description: "Next-gen gaming with stunning graphics and fast load times",
+//     image:
+//       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_3_cydztb.png",
+//     price: 499.99,
+//   },
+// ];
 
 export const ads = [
   {
@@ -169,20 +171,23 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Basic Tee",
+    description:
+      "Sdvsae ljqekfjqlkjefqklfhkqlj flkqjdf qfjekfb qkwjfqblkjfqbwlkfjbqlkfjekjfqbfjkwjbfbf   ewjbf kewjf qkjbfq wkejfbqekjf",
     href: "#",
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
     imageAlt: "Front of men's Basic Tee in black.",
     price: 35,
     PricePerQuantity: 35,
-    color: "Black",
+    color: ["Black", "White"],
     size: ["M", "L", "XL"],
     category: {
-      mainCategory: "child",
-      subCategory: "Shirts",
+      mainCategory: "Child",
+      subCategory: ["All", "Blazers"],
     },
     discount: 10,
     userQuantity: 1,
+    special: true,
   },
   {
     id: 2,
@@ -193,13 +198,15 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Red", "Blue", "Grey"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Man",
-      subCategory: "Shoes",
+      subCategory: ["All", "Shoes"],
     },
     userQuantity: 1,
+    newProduct: true,
+    special: true,
   },
   {
     id: 3,
@@ -210,14 +217,15 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Beige", "Navy", "White", "Red"],
     size: ["S", "M", "L", "XXL"],
     category: {
-      mainCategory: "child",
-      subCategory: "Shirts",
+      mainCategory: "Child",
+      subCategory: ["All", "Accessories"],
     },
     discount: 25,
     userQuantity: 1,
+    special: true,
   },
   {
     id: 4,
@@ -228,14 +236,15 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Red"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Woman",
-      subCategory: "Shirts",
+      subCategory: ["All", "Shirts"],
     },
     discount: 25,
     userQuantity: 1,
+    special: true,
   },
   {
     id: 5,
@@ -246,11 +255,11 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 35,
     PricePerQuantity: 35,
-    color: "Black",
+    color: ["Black"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Man",
-      subCategory: "Shoes",
+      subCategory: ["All", "Knitwear"],
     },
     discount: 10,
     userQuantity: 1,
@@ -264,13 +273,15 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Red"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Man",
-      subCategory: "Blazers",
+      subCategory: ["All", "Trousers"],
     },
     userQuantity: 1,
+    newProduct: true,
+    special: true,
   },
   {
     id: 7,
@@ -281,11 +292,11 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Red"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Woman",
-      subCategory: "Knitwear",
+      subCategory: ["All", "Shirts"],
     },
     discount: 25,
     userQuantity: 1,
@@ -299,14 +310,15 @@ export const products: Product[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 255,
     PricePerQuantity: 255,
-    color: "Red",
+    color: ["Red"],
     size: ["S", "M", "L", "XXL"],
     category: {
       mainCategory: "Man",
-      subCategory: "Shirts",
+      subCategory: ["All", "Blazers"],
     },
     discount: 25,
     userQuantity: 1,
+    newProduct: true,
   },
 ];
 
@@ -338,13 +350,29 @@ export const SubcategoriesWomen: subcategoriesType[] = [
   "Accessories",
 ];
 
+export const SubcategoriesChild: subcategoriesType[] = [
+  "All",
+  "Blazers",
+  "Trousers",
+  "Shirts",
+  "Knitwear",
+  "Shoes",
+  "Accessories",
+];
+
 export const colors: colorsType[] = [
   "Black",
-  "Navy",
-  "Grey",
   "White",
+  "Grey",
+  "Navy",
   "Beige",
   "Brown",
+  "Blue",
+  "Orange",
+  "Green",
+  "Yellow",
+  "Sky",
+  "Red",
 ];
 
 export const sizes: sizesType[] = ["XS", "S", "M", "L", "XL", "XXL"];

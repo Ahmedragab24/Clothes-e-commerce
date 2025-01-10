@@ -1,16 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import { Product } from "@/type";
+import { RiStarFill } from "react-icons/ri";
+import AddToCartBtn from "@/components/auth/AddToCardBtn";
+import Link from "next/link";
+import {
+  calculateDiscountedPrice,
+  formatPrice,
+} from "@/hooks/UseDiscountPrice";
 
 interface IProps {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
+  SpacialProduct: Product;
 }
 
-const CardFeatured = ({ title, description, image, price }: IProps) => {
+const CardFeatured = ({ SpacialProduct }: IProps) => {
+  const { id, name, description, price, imageSrc, imageAlt, discount } =
+    SpacialProduct;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -23,26 +30,43 @@ const CardFeatured = ({ title, description, image, price }: IProps) => {
       transition={{ duration: 0.5 }}
       className="card"
     >
-      <div>
-        <div className="relative flex justify-center w-full mb-4 overflow-hidden rounded-lg h-72">
+      <Link href={`/Products/${id}`}>
+        <div className="relative flex justify-center w-full h-64 mb-4 overflow-hidden rounded-lg">
           <Image
             loading="lazy"
             width={400}
             height={500}
-            src={image}
-            alt={title}
+            src={imageSrc}
+            alt={imageAlt}
             className="w-[80%] object-cover transition-transform duration-300 hover:scale-110"
           />
+
+          <div className="absolute left-0">
+            <RiStarFill className="text-primary" size={35} />
+          </div>
         </div>
-        <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-        <p className="mb-4 text-sm text-muted-foreground">{description}</p>
-      </div>
+        <h3 className="mb-2 text-xl font-semibold">{name}</h3>
+        <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
+          {description}
+        </p>
+      </Link>
       <div className="flex items-center justify-between">
-        <p className="text-lg font-bold text-secondary">${price}</p>
-        <button className="flex items-center px-4 py-2 space-x-2 text-white transition-colors duration-200 rounded-full bg-primary hover:bg-primary/80">
-          <ShoppingCart size={16} />
-          <span>Add to Cart</span>
-        </button>
+        {discount ? (
+          <div className="flex items-center gap-1">
+            <p className="text-xl font-semibold text-destructive drop-shadow-md">
+              {formatPrice(calculateDiscountedPrice(price, discount))}
+            </p>
+            <p className="ml-2 text-sm line-through text-muted-foreground">
+              {formatPrice(price)}
+            </p>
+          </div>
+        ) : (
+          <p className="text-xl font-semibold text-destructive drop-shadow-md">
+            {formatPrice(price)}
+          </p>
+        )}
+
+        <AddToCartBtn typeBtn="Button" product={SpacialProduct} />
       </div>
     </motion.div>
   );

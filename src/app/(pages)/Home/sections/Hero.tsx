@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { slides } from "@/constants";
 import type { Swiper as SwiperType } from "swiper";
 import type { NavigationOptions } from "swiper/types";
@@ -40,7 +40,7 @@ const Hero = () => {
       </button>
 
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         pagination={{
           clickable: true,
@@ -50,25 +50,38 @@ const Hero = () => {
             }</span>`;
           },
         }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         loop
         className="w-full h-screen"
         spaceBetween={20}
         slidesPerView={1}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={slide.id} className="relative">
+          <SwiperSlide key={slide.id} className="relative overflow-hidden">
             <Image
               width={1440}
               height={700}
               src={slide.src}
               alt={slide.alt}
-              priority={index === 0}
+              priority={index === 0 && false}
               loading="eager"
               className="w-full mySwiper"
             />
 
-            <div className="absolute top-[30%] left-[8%] flex flex-col gap-4">
-              <div className="flex items-center gap-2">
+            <div
+              className={`absolute top-[30%] left-[8%] flex flex-col gap-4 ${
+                index === 1 &&
+                "!top-[50%] !left-[50%] transform translate-x-[-50%] translate-y-[-50%] items-center text-center"
+              }`}
+            >
+              <div
+                className={`flex items-center gap-2 ${
+                  index === 1 && "flex-col"
+                }`}
+              >
                 <h3 className="text-2xl">{slide.title}</h3>
                 <h1 className="text-3xl font-semibold text-secondary drop-shadow-lg">
                   {slide.suTitle}
@@ -90,11 +103,13 @@ const Hero = () => {
               </Link>
             </div>
 
-            <div className="absolute flex gap-2 bottom-6 right-2">
-              {slide.socialLink.map((Icon, indx) => (
-                <Icon key={indx} className="icon" />
-              ))}
-            </div>
+            {index === 0 && (
+              <div className="absolute flex gap-2 bottom-6 right-2">
+                {slide.socialLink.map((Icon, indx) => (
+                  <Icon key={indx} className="icon" />
+                ))}
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

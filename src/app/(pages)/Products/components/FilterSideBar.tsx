@@ -6,6 +6,7 @@ import {
   colors,
   sizes,
   SubcategoriesAll,
+  SubcategoriesChild,
   SubcategoriesMan,
   SubcategoriesWomen,
 } from "@/constants";
@@ -42,84 +43,96 @@ const FilterSidebar = () => {
 
   useEffect(() => {
     if (MainCategory === "All") setSubCategories(SubcategoriesAll);
+    if (MainCategory === "Child") setSubCategories(SubcategoriesChild);
     if (MainCategory === "Man") setSubCategories(SubcategoriesMan);
     if (MainCategory === "Woman") setSubCategories(SubcategoriesWomen);
   }, [MainCategory]);
 
   return (
     <motion.aside
-      className="w-full lg:w-64 bg-white p-6 rounded-lg shadow-md"
+      className="w-full p-4 bg-white border rounded-lg shadow-md lg:w-64"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-semibold mb-6">Filters</h2>
+      <h2 className="mb-6 text-2xl font-semibold">Filters</h2>
 
-      <div className="flex gap-3">
-        <Button onClick={() => dispatch(FilteringMainCategory("All"))}>
-          All
-        </Button>
-        <Button onClick={() => dispatch(FilteringMainCategory("Man"))}>
-          Men
-        </Button>
-        <Button onClick={() => dispatch(FilteringMainCategory("Woman"))}>
-          Women
-        </Button>
-      </div>
-
-      <div className="mb-6">
-        <h3 className="text-lg font-medium mb-3">Category</h3>
-        <ul>
-          {SubCategories?.map((category) => (
-            <li key={category} className="mb-2">
-              <button
-                className={`w-full text-left py-1 px-2 rounded-md transition-colors duration-200 ${
-                  SubCategory === category
-                    ? "bg-primary text-white"
-                    : "hover:bg-gray-100"
-                }`}
-                onClick={() => dispatch(FilteringSubCategory(category))}
-              >
-                {category}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h3 className="text-lg font-medium mb-3">Color</h3>
-        <div className="flex flex-wrap gap-2">
-          {colors.map((color: colorsType) => (
-            <button
-              key={color}
-              className={`w-8 h-8 rounded-full border-2 ${
-                Colors.includes(color) ? "border-primary" : "border-gray-300"
-              }`}
-              style={{ backgroundColor: color.toLowerCase() }}
-              onClick={() => toggleColor(color)}
-              aria-label={`Select ${color} color`}
-            />
-          ))}
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-3">
+          <Button
+            variant={`${MainCategory === "Man" ? "default" : "outline"}`}
+            onClick={() => dispatch(FilteringMainCategory("Man"))}
+          >
+            Men
+          </Button>
+          <Button
+            variant={`${MainCategory === "Woman" ? "default" : "outline"}`}
+            onClick={() => dispatch(FilteringMainCategory("Woman"))}
+          >
+            Women
+          </Button>
+          <Button
+            variant={`${MainCategory === "Child" ? "default" : "outline"}`}
+            onClick={() => dispatch(FilteringMainCategory("Child"))}
+          >
+            Child
+          </Button>
         </div>
-      </div>
 
-      <div>
-        <h3 className="text-lg font-medium mb-3">Size</h3>
-        <div className="flex flex-wrap gap-2">
-          {sizes.map((size) => (
-            <button
-              key={size}
-              className={`py-1 px-3 rounded-md border ${
-                Sizes.includes(size)
-                  ? "bg-primary text-white border-primary"
-                  : "border-gray-300 hover:bg-gray-100"
-              }`}
-              onClick={() => toggleSize(size)}
-            >
-              {size}
-            </button>
-          ))}
+        <div>
+          <h3 className="mb-3 text-lg font-medium">Category</h3>
+          <ul>
+            {SubCategories?.map((category) => (
+              <li key={category} className="mb-2">
+                <button
+                  className={`w-full text-left py-1 px-2 rounded-md transition-colors duration-200 ${
+                    SubCategory === category
+                      ? "bg-primary text-white"
+                      : "hover:bg-gray-100"
+                  }`}
+                  onClick={() => dispatch(FilteringSubCategory(category))}
+                >
+                  {category}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-3 text-lg font-medium">Color</h3>
+          <div className="flex flex-wrap gap-2">
+            {colors.map((color: colorsType) => (
+              <button
+                key={color}
+                className={`w-8 h-8 rounded-full border-4 ${
+                  Colors.includes(color) ? "border-primary" : "border-gray-300"
+                }`}
+                style={{ backgroundColor: color.toLowerCase() }}
+                onClick={() => toggleColor(color)}
+                aria-label={`Select ${color} color`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-medium">Size</h3>
+          <div className="flex flex-wrap gap-2">
+            {sizes.map((size) => (
+              <button
+                key={size}
+                className={`py-1 px-3 rounded-md border ${
+                  Sizes.includes(size)
+                    ? "bg-primary text-white border-primary"
+                    : "border-gray-300 hover:bg-gray-100"
+                }`}
+                onClick={() => toggleSize(size)}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </motion.aside>

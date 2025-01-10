@@ -6,7 +6,10 @@ import {
 } from "react-icons/ri";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";
-import { formatPrice, calculateDiscountedPrice } from "@/hooks/DiscountPrice";
+import {
+  formatPrice,
+  calculateDiscountedPrice,
+} from "@/hooks/UseDiscountPrice";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { RemovingToCart } from "@/store/Features/ShoppingCart/ShoppingCart";
@@ -74,7 +77,7 @@ const ProductInCart = ({ setOpenCart }: IProps) => {
   };
 
   return (
-    <ScrollArea className="w-full h-screen mt-3">
+    <ScrollArea className="w-full h-[76vh] mt-3">
       <div className="flex flex-col gap-6 p-2">
         {products.length < 1 && (
           <div className="h-[50vh]  text-center flex flex-col justify-center items-center gap-4">

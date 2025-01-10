@@ -3,7 +3,7 @@ import Product from "./components/ProductCard";
 
 const ProductsSection = () => {
   return (
-    <section className="section" id="products">
+    <section className="section" id="Products">
       <div className="container flex flex-col gap-4">
         <h2 className="sectionTitle">Hot Deal, Big Save</h2>
 
