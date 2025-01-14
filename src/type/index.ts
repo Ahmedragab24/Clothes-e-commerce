@@ -5,10 +5,13 @@ export type Product = {
   href: string;
   imageSrc: string;
   imageAlt: string;
+  imagesGroup: string[];
   price: number;
   PricePerQuantity: number;
   color?: colorsType[];
   size: sizesType[];
+  features: string[];
+  specifications?: Record<string, string>;
   category: {
     mainCategory: mainCategoriesType;
     subCategory: subcategoriesType[];
@@ -18,6 +21,12 @@ export type Product = {
   userQuantity?: number;
   special?: boolean;
   newProduct?: boolean;
+};
+
+export type categoriesType = {
+  name: mainCategoriesType;
+  image: string;
+  link: string;
 };
 
 export type mainCategoriesType = "All" | "Man" | "Woman" | "Child";

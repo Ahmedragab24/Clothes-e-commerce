@@ -47,7 +47,7 @@ const ShoppingCartSheet = ({ children }: IProps) => {
 
         {total > 0 && (
           <SheetFooter className="absolute bottom-0 left-0 w-full border-t-2 bg-background rounded-t-md">
-            <div className="flex justify-between w-full px-6 py-2">
+            <div className="flex flex-col justify-between w-full px-6 md:flex-row">
               <h1 className="flex gap-1 text-black text-md">
                 Total Price:
                 <span className="font-semibold text-red-500">${total}</span>

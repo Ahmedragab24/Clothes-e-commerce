@@ -90,7 +90,7 @@ body {
   }
 
   .Btn-swiper {
-    @apply absolute z-10 p-3 text-white -translate-y-1/2 rounded-full bg-black/15 drop-shadow-md top-1/2 hover:bg-black/30;
+    @apply absolute z-10 p-2 md:p-3 text-white -translate-y-1/2 rounded-full bg-black/15 drop-shadow-md top-1/2 hover:bg-black/30;
   }
 
   .navIcon {
@@ -121,6 +121,7 @@ body {
   margin: 0 5px !important;
   display: inline-block !important;
   transition: transform 0.3s ease !important;
+  box-shadow: 0px 0px 2px #000000;
 }
 
 .swiper-pagination-bullet-active.custom-bullet {

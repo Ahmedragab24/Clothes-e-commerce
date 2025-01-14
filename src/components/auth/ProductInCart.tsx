@@ -119,7 +119,7 @@ const ProductInCart = ({ setOpenCart }: IProps) => {
             <div className="flex flex-col gap-2">
               <h3>{product.name}</h3>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center gap-x-3 gap-y-1 md:flex-row">
                 {product.discount ? (
                   <>
                     <p className="font-semibold text-red-500 text-md drop-shadow-md">

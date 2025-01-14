@@ -42,7 +42,7 @@ const AdBanner = () => {
           alt={ads[currentAd].title}
           width={1400}
           height={400}
-          className="object-cover w-full h-auto"
+          className="w-full h-52 lg:h-auto"
           priority
         />
         <div className="absolute inset-0 bg-black/30 bg-opacity-40" />
@@ -51,7 +51,7 @@ const AdBanner = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 text-4xl font-bold md:text-5xl drop-shadow-lg"
+            className="mb-4 text-2xl font-bold lg:text-4xl md:text-5xl drop-shadow-lg"
           >
             {ads[currentAd].title}
           </motion.h2>

@@ -10,6 +10,7 @@ import {
 import { Metadata } from "next";
 import AddToCardBtn from "@/components/auth/AddToCardBtn";
 import Link from "next/link";
+import AddToFavoritesBtn from "@/components/auth/AddToFavoritesBtn";
 
 export const metadata: Metadata = {
   title: "product",
@@ -43,9 +44,10 @@ const ProductCard = ({ product }: IProps) => {
           </div>
         )}
 
-        {/* Circular Add to Cart Button */}
-        <div className="">
+        {/* Circular Add to Cart Button && ADD to Favorites */}
+        <div className="flex flex-col items-center">
           <AddToCardBtn typeBtn="Icon" product={product} />
+          <AddToFavoritesBtn product={product} />
         </div>
       </div>
 

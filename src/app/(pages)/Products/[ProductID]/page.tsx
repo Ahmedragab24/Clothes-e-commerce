@@ -1,14 +1,13 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import React from "react";
+import ProductDetails from "./components/ProductDetails";
+import CircleLight from "@/components/shard/CircleLight";
 
 const ProductPage = () => {
-  const { ProductID } = useParams();
-
   return (
     <section className="section">
-      <div>ProductID Is {ProductID}</div>
+      <CircleLight type="Yellow" />
+      <CircleLight type="Sky" />
+      <ProductDetails />
     </section>
   );
 };

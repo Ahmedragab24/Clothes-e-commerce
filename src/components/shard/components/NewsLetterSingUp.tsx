@@ -20,7 +20,7 @@ const NewsletterSignup = () => {
           name="email"
           placeholder="Enter your email"
           required
-          className="flex-grow px-3 py-2 border border-secondary-foreground/20 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="flex-grow w-20 px-1 py-2 border lg:px-3 border-secondary-foreground/20 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <SubmitButton />
       </div>
@@ -36,7 +36,7 @@ const SubmitButton = () => {
     <button
       type="submit"
       disabled={pending}
-      className="px-4 py-2 transition-colors bg-primary text-primary-foreground rounded-r-md hover:bg-primary/90 disabled:bg-primary/50"
+      className="px-1 py-2 transition-colors lg:px-4 bg-primary text-primary-foreground rounded-r-md hover:bg-primary/90 disabled:bg-primary/50"
     >
       {pending ? "Subscribing..." : "Subscribe"}
     </button>

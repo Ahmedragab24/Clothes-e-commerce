@@ -1,4 +1,10 @@
-import { colorsType, Product, sizesType, subcategoriesType } from "@/type";
+import {
+  categoriesType,
+  colorsType,
+  Product,
+  sizesType,
+  subcategoriesType,
+} from "@/type";
 import {
   RiFacebookBoxFill,
   RiWhatsappFill,
@@ -24,12 +30,15 @@ export const NavLinks = [
 export const slides = [
   {
     id: "slide1",
-    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736292971/Gray_Minimalist_New_Collection_Banner_1_yhc9no.jpg",
+    largeScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736492886/Gray_Minimalist_New_Collection_Banner_5_ac2ze2.jpg",
+    smallScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736808555/Orange_and_Blue_New_Menu_Phone_Wallpaper_kvcanh.png",
     alt: "Slide 1",
     title: "Welcome to",
     suTitle: "Vezura!",
     description:
-      "We are here to bring you the latest fashion trends and the most beautiful designs that match your refined taste. At Vezura, we believe that clothing is more than just an outfit; it's a way to express your personality and style. Enjoy an unparalleled shopping experience with a wide range of fashion for men, women, and children, where you'll find everything you need to make your day special and more stylish.",
+      "We are here to bring you the latest fashion trends and the most beautiful designs that match your refined taste. At Vezura, we believe that clothing is more than just an outfit; it's a way to express your personality and style. Enjoy an unparalleled shopping experience with a wide range of fashion for men, women, and children.",
     offer: "up to 50% off",
     btn: "Shop Now",
     link: "/#products",
@@ -42,7 +51,10 @@ export const slides = [
   },
   {
     id: "slide2",
-    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736468978/Gray_Minimalist_New_Collection_Banner_3_bgkrbq.jpg",
+    largeScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736468978/Gray_Minimalist_New_Collection_Banner_3_bgkrbq.jpg",
+    smallScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736808543/Orange_and_Blue_New_Menu_Phone_Wallpaper_1_igbtu1.png",
     alt: "Slide 2",
     suTitle: "Special offer",
     description:
@@ -59,7 +71,10 @@ export const slides = [
   },
   {
     id: "slide3",
-    src: "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736472950/Gray_Minimalist_New_Collection_Banner_4_nt8c43.jpg",
+    largeScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736472950/Gray_Minimalist_New_Collection_Banner_4_nt8c43.jpg",
+    smallScreen:
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736808556/Orange_and_Blue_New_Menu_Phone_Wallpaper_2_lzitkg.png",
     alt: "Slide 3",
     suTitle: "Special offer",
     description:
@@ -76,21 +91,21 @@ export const slides = [
   },
 ];
 
-export const categories = [
+export const categories: categoriesType[] = [
   {
-    name: "Men",
+    name: "Man",
     image:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736130911/Man_fevxt4.png",
     link: "/men",
   },
   {
-    name: "Women",
+    name: "Woman",
     image:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736130910/Woman_yuahob.png",
     link: "/women",
   },
   {
-    name: "Children",
+    name: "Child",
     image:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736130909/Boy_bqwkgq.png",
     link: "/children",
@@ -177,10 +192,28 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143475/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_4_wnqglb.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_3_cydztb.png",
+    ],
     price: 35,
     PricePerQuantity: 35,
     color: ["Black", "White"],
     size: ["M", "L", "XL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
+    specifications: {
+      Material: "High-quality mesh and premium leather",
+      "Weight Capacity": "300 lbs",
+      Dimensions: "26W x 26D x 38-42H",
+      Color: "Black, White, Gray",
+    },
     category: {
       mainCategory: "Child",
       subCategory: ["All", "Blazers"],
@@ -196,10 +229,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143475/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_4_wnqglb.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Red", "Blue", "Grey"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Man",
       subCategory: ["All", "Shoes"],
@@ -215,10 +260,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143477/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_2_mpvnfx.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Beige", "Navy", "White", "Red"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Child",
       subCategory: ["All", "Accessories"],
@@ -234,10 +291,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_3_cydztb.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Red"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Woman",
       subCategory: ["All", "Shirts"],
@@ -253,10 +322,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 35,
     PricePerQuantity: 35,
     color: ["Black"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Man",
       subCategory: ["All", "Knitwear"],
@@ -271,10 +352,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143475/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_4_wnqglb.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Red"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Man",
       subCategory: ["All", "Trousers"],
@@ -290,10 +383,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143477/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_2_mpvnfx.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Red"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Woman",
       subCategory: ["All", "Shirts"],
@@ -308,10 +413,22 @@ export const products: Product[] = [
     imageSrc:
       "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143476/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_3_cydztb.png",
     imageAlt: "Front of men's Basic Tee in black.",
+    imagesGroup: [
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+      "https://res.cloudinary.com/dk4yvlwr0/image/upload/v1736143479/%D8%AF%D9%88%D9%86_%D8%B9%D9%86%D9%88%D8%A7%D9%86_800_x_704_%D8%A8%D9%8A%D9%83%D8%B3%D9%84_eycfld.png",
+    ],
     price: 255,
     PricePerQuantity: 255,
     color: ["Red"],
     size: ["S", "M", "L", "XXL"],
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh back",
+      "360-degree swivel",
+      "Adjustable armrests",
+      "Smooth-rolling casters",
+    ],
     category: {
       mainCategory: "Man",
       subCategory: ["All", "Blazers"],

@@ -9,7 +9,13 @@ import { Product } from "@/type";
 import { RootState } from "@/store/store";
 import { CheckCheck } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { RiShoppingBag4Line } from "react-icons/ri";
+import { RiShoppingBag4Fill, RiShoppingBag4Line } from "react-icons/ri";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface IProps {
   product: Product;
@@ -50,28 +56,40 @@ const AddToCartBtn = ({ product, typeBtn }: IProps) => {
   return (
     <>
       {typeBtn == "Icon" && (
-        <Button
-          className={`absolute z-10 flex items-center justify-center w-10 h-10 transition-transform transform rounded-full shadow-lg top-2 right-4 group-hover:scale-110 ${
-            isInCart
-              ? "bg-primary text-white hover:bg-red-500"
-              : "bg-white text-black"
-          }`}
-          aria-label="Add to Cart"
-          onClick={handleAddToCart}
-        >
-          {isInCart ? (
-            <CheckCheck size={24} />
-          ) : (
-            <RiShoppingBag4Line className="relative" size={24} />
-          )}
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                size={"icon"}
+                className={`absolute z-10 flex items-center justify-center w-10 h-10 transition-transform transform rounded-full shadow-lg top-2 right-4 group-hover:scale-110 ${
+                  isInCart
+                    ? "bg-secondary text-white hover:bg-destructive"
+                    : "bg-white text-black"
+                }`}
+                aria-label="Add to Cart"
+                onClick={handleAddToCart}
+              >
+                {isInCart ? (
+                  <RiShoppingBag4Fill size={24} className="text-primary" />
+                ) : (
+                  <RiShoppingBag4Line className="relative" size={24} />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>
+                {isInCart ? "Remove to Shopping Bag" : "Add to Shopping Bag"}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       )}
 
       {typeBtn == "Button" && (
         <Button
           variant={`${isInCart ? "secondary" : "default"}`}
           onClick={handleAddToCart}
-          className="gap-1"
+          className="gap-1 px-2"
         >
           {isInCart ? (
             <CheckCheck size={16} />

@@ -28,17 +28,17 @@ const CardFeatured = ({ SpacialProduct }: IProps) => {
       }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="card"
+      className="card group"
     >
       <Link href={`/Products/${id}`}>
-        <div className="relative flex justify-center w-full h-64 mb-4 overflow-hidden rounded-lg">
+        <div className="relative flex justify-center w-full h-56 mb-4 overflow-hidden rounded-lg">
           <Image
             loading="lazy"
             width={400}
             height={500}
             src={imageSrc}
             alt={imageAlt}
-            className="w-[80%] object-cover transition-transform duration-300 hover:scale-110"
+            className="w-[70%] object-cover transition-transform duration-300 group-hover:scale-110"
           />
 
           <div className="absolute left-0">
@@ -56,7 +56,7 @@ const CardFeatured = ({ SpacialProduct }: IProps) => {
             <p className="text-xl font-semibold text-destructive drop-shadow-md">
               {formatPrice(calculateDiscountedPrice(price, discount))}
             </p>
-            <p className="ml-2 text-sm line-through text-muted-foreground">
+            <p className="text-sm line-through text-muted-foreground">
               {formatPrice(price)}
             </p>
           </div>

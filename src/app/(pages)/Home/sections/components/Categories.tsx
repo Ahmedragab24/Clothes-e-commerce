@@ -1,17 +1,26 @@
 "use client";
 
 import { categories } from "@/constants";
+import { FilteringMainCategory } from "@/store/Features/FilteringProducts/Filtering";
+import { useAppDispatch } from "@/store/hooks";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const Categories = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <section className="container px-4 py-16 mx-auto">
       <h2 className="sectionTitle">Our Collections</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {categories.map((category) => (
-          <Link href={category.link} key={category.name} className="group">
+          <Link
+            href={"/Products"}
+            key={category.name}
+            className="group"
+            onClick={() => dispatch(FilteringMainCategory(category.name))}
+          >
             <motion.div
               className="relative flex justify-center overflow-hidden rounded-lg shadow-lg "
               whileHover={{ scale: 1.05 }}
